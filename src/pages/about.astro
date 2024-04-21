@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
 
 const pageTitle = "Hakkımda";
 
@@ -21,11 +23,7 @@ const fontWeight = "bold";
 const textCase = "uppercase";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
+<BaseLayout pageTitle={pageTitle}>
     
             <style define:vars={{skillColor, fontWeight, textCase}}>
             h1 {
@@ -38,15 +36,9 @@ const textCase = "uppercase";
             text-transform: var(--textCase);
         }
             </style>
-  </head>
 
-<body>
 
-<a href="/">Home</a>
-<a href="/about/">{pageTitle}</a>
-<a href="/blog/">Blog</a>
 
-<h1>{pageTitle}</h1>
 <h2>... and my new Astro site!</h2>
 
   <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
@@ -72,6 +64,5 @@ const textCase = "uppercase";
 
 {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
 
-</body>
 
-</html>
+</BaseLayout>
